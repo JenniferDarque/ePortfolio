@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Artifact One – Shader Files</title>
+    <title>Artifact One – Source Code</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -38,23 +38,28 @@
 </head>
 
 <body>
-    <h1>Artifact One – Shader Module</h1>
-    <p>This directory contains the GLSL shader programs used by the Artifact One rendering pipeline.</p>
+    <h1>Artifact One – Source Code</h1>
+    <p>This directory contains the core C++ source files for the Artifact One project, including lighting, scene management, view handling, and the main application logic.</p>
 
     <div class="section">
-        <h2>Shader Files</h2>
+        <h2>Source Files</h2>
         <ul>
-            <li><a href="fragmentShader.glsl">fragmentShader.glsl</a></li>
-            <li><a href="vertexShader.glsl">vertexShader.glsl</a></li>
+            <li><a href="LightingManager.cpp">LightingManager.cpp</a></li>
+            <li><a href="LightingManager.h">LightingManager.h</a></li>
+            <li><a href="MainCode.cpp">MainCode.cpp</a></li>
+            <li><a href="SceneManager.cpp">SceneManager.cpp</a></li>
+            <li><a href="SceneManager.h">SceneManager.h</a></li>
+            <li><a href="ViewManager.cpp">ViewManager.cpp</a></li>
+            <li><a href="ViewManager.h">ViewManager.h</a></li>
         </ul>
     </div>
 
     <div class="section">
         <h2>About This Folder</h2>
         <p>
-            These shaders define how vertices and fragments are processed during rendering. 
-            The vertex shader handles transformations and geometry processing, while the 
-            fragment shader controls pixel-level coloring and lighting.
+            These files implement the main functionality of Artifact One, including rendering setup, 
+            lighting calculations, scene organization, and camera/view transformations. This is the 
+            heart of the project’s logic.
         </p>
     </div>
 </body>
