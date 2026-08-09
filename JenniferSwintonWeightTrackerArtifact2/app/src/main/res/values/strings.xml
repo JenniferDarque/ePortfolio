@@ -1,0 +1,97 @@
+<resources>
+
+    <string name="app_name">WeightTrackerAppProj2</string>
+
+    <!-- Login -->
+    <string name="weight_tracker">Weight Tracker</string>
+    <string name="username">Username</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="create_account">Create Account</string>
+    <string name="login_error">Invalid username or password</string>
+
+    <!-- Create Account -->
+    <string name="create_account_title">Create Account</string>
+    <string name="create_username">Create Username</string>
+    <string name="create_password">Create Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="passwords_do_not_match">Passwords do not match</string>
+    <string name="account_created">Account created successfully</string>
+    <string name="fields_cannot_be_empty">Fields cannot be empty</string>
+    <string name="invalid_username_format">Username must be 5–20 characters and contain only letters and numbers.</string>
+    <string name="invalid_password_format">Password must be 8–25 characters and contain only letters, numbers, and @ ! $ # %% &amp;.</string>
+    <string name="insecure_password">This password is not secure. Enter a new password</string>
+
+    <!-- Sample Data -->
+    <string name="sample_date_0401">04/01/2026</string>
+    <string name="sample_weight_150">150 lbs</string>
+    <string name="delete_x">X</string>
+
+    <!-- SMS Screen -->
+    <string name="sms_title">SMS Notifications</string>
+    <string name="sms_description">
+        This app can send SMS alerts when you reach your goal weight, or reminders to log your daily weight.
+    </string>
+    <string name="check_sms_permission">Notifications Status</string>
+    <string name="request_sms_permission">Request SMS Permission</string>
+    <string name="preview_label">Notification Preview:</string>
+    <string name="preview_message">Reminder: Log Your Weight Today</string>
+    <string name="return_home">Return to Home Screen</string>
+
+    <string name="goal_reached_notify">Goal Reached Notification</string>
+    <string name="daily_weight_reminder">Daily Weight Reminder</string>
+
+    <!-- Data Grid Screen -->
+    <string name="weight_history">Weight History</string>
+    <string name="header_date">Date</string>
+    <string name="header_weight">Weight</string>
+    <string name="header_delete">Delete</string>
+    <string name="add_new_entry">Add New Entry</string>
+    <string name="significant_change_alert">That\'s a significant change. Please verify your entry is accurate.</string>
+    <string name="view_trend">View Trend</string>
+    <string name="home">Home</string>
+    <string name="duplicate_date_warning">This day already has an entry. Do you want to change it?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!-- Weight Trend Screen -->
+    <string name="weight_trend_title">Weight Trend</string>
+    <string name="filter_week">Week</string>
+    <string name="filter_month">Month</string>
+    <string name="filter_year">Year</string>
+    <string name="filter_all">All Time</string>
+    <string name="goal_weight_display">Goal Weight: %s lbs</string>
+    <string name="set_goal">Set Goal</string>
+    <string name="enter_weight">Enter Weight</string>
+    <string name="notifications">Notifications</string>
+    <string name="prediction_placeholder">Prediction will appear here</string>
+    <string name="trend_need_more_data">Enter at least 14 entries from the last 30 days for a prediction.</string>
+    <string name="trend_losing">Trend: Losing weight (%.1f lbs total)</string>
+    <string name="trend_gaining">Trend: Gaining weight (%.1f lbs total)</string>
+    <string name="trend_stable">Trend: Stable weight</string>
+    <string name="goal_remaining">%.1f lbs until goal reached!</string>
+    <string name="goal_reached_label">Goal reached!</string>
+    <string name="weight_prediction_result">Your weight in %1$d days from %2$s will be: %3$.1f lbs</string>
+    <string name="accuracy_warning">Predictions greater than 3 months have a greatly reduced accuracy rate.</string>
+    <string name="change_prediction_days">Change Prediction Days</string>
+    <string name="enter_days_up_to_12_months">Enter days (1–365):</string>
+    <string name="ok">OK</string>
+    <string name="invalid_input">Invalid input. Enter days between 1 and 365.</string>
+    <string name="goal_reach_prediction">You will reach your goal weight in %d days.</string>
+
+    <!-- Set Goal Weight Screen -->
+    <string name="set_goal_title">Set/Update Goal Weight</string>
+    <string name="enter_goal_weight">Enter Goal Weight</string>
+    <string name="update">Update</string>
+    <string name="cancel">Cancel</string>
+    <string name="goal_updated">Goal weight updated</string>
+
+    <!-- Fixed Hints -->
+    <string name="hint_date">MM/DD/YYYY</string>
+    <string name="hint_weight">Enter weight</string>
+
+    <string name="add_entry">Add Entry</string>
+
+</resources>
