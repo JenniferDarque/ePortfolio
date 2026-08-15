@@ -2,23 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Graphics Rendering Project – Overview</title>
+    <title>Software Engineering & Design – Capstone Artifact</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 40px;
-            background: #f7f7f7;
+            background: #f3efe6; /* Soft beige background */
             color: #333;
+            line-height: 1.6;
         }
-        h1 {
+        h1, h2, h3 {
             margin-bottom: 10px;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
         .section {
             background: #fff;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 35px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
         }
         ul {
             list-style: none;
@@ -27,55 +35,147 @@
         li {
             margin: 6px 0;
         }
-        a {
-            text-decoration: none;
-            color: #0066cc;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 
 <body>
-    <h1>Graphics Rendering Project – Overview</h1>
 
-    <!-- Return to Home Page -->
-    <p><a href="../index.html">Return to Home Page</a></p>
+    <h1>Software Engineering & Design Artifact</h1>
+    <p><a href="../index.html">← Back to Homepage</a></p>
 
-    <p>
-        This page provides access to the major components of the Graphics Rendering Project, 
-        including source code, utilities, 3D assets, and documentation developed and enhanced 
-        for the Capstone Project.
-    </p>
-
+    <!-- CATEGORY SUMMARY -->
     <div class="section">
-        <h2>Project Folders</h2>
-        <ul>
-            <li><a href="https://github.com/JenniferDarque/ePortfolio/tree/main/ArtifactOne/3DShapes">3DShapes/</a></li>
-            <li><a href="https://github.com/JenniferDarque/ePortfolio/tree/main/ArtifactOne/7-1_FinalProjectMilestones">7-1_FinalProjectMilestones/</a></li>
-            <li><a href="https://github.com/JenniferDarque/ePortfolio/tree/main/ArtifactOne/Utilities">Utilities/</a></li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Documentation</h2>
-        <ul>
-            <li><a href="Capstone Artifact One Narrative.docx">Graphics Rendering Project Narrative (Capstone)</a></li>
-        </ul>
+        <h2>Category Overview</h2>
         <p>
-            This document contains the written narrative accompanying the Graphics Rendering Project, 
-            including design decisions, development process, enhancements, and reflection completed 
-            for the Capstone Project.
+            For the Software Engineering and Design category, I selected a 3D rendering project originally 
+            developed in C++ and OpenGL. This artifact showcases full control over the graphics pipeline through 
+            custom GLSL shaders, including a vertex shader responsible for matrix‑driven coordinate manipulation 
+            and a fragment shader that computes realistic surface textures and Phong lighting across directional, 
+            point, and spot light sources.
+        </p>
+        <p>
+            I chose this artifact because it represents a technically challenging and personally meaningful part 
+            of my programming journey. Enhancing it allowed me to demonstrate modular software engineering, 
+            shader architecture improvements, and rendering pipeline refinement. The project’s complexity made 
+            it an ideal candidate for showcasing advanced engineering skills and thoughtful system design.
         </p>
     </div>
 
+    <!-- ENHANCEMENT PLAN -->
     <div class="section">
-        <h2>About This Directory</h2>
+        <h2>Enhancement Plan</h2>
         <p>
-            This is the top-level directory for the Graphics Rendering Project within the Capstone ePortfolio. 
-            Use this page to navigate to the project’s code, assets, utilities, and documentation.
+            The enhancement focused on upgrading the lighting model from Phong to Blinn‑Phong and reorganizing 
+            the rendering pipeline into a more modular architecture. This required coordinated updates across 
+            the fragment shader, vertex shader, and C++ rendering pipeline.
+        </p>
+
+        <h3>Shader Enhancements</h3>
+        <p>
+            The original fragment shader used Phong specular reflection, which relies on a reflection vector. 
+            Blinn‑Phong replaces this with a half‑vector, improving performance and producing smoother highlights.
+        </p>
+
+        <pre>
+vec3 halfVector = normalize(lightDir + viewDir);
+float spec = pow(max(dot(normal, halfVector), 0.0), material.shininess);
+        </pre>
+
+        <p>
+            Additional improvements included normalizing transformed normals, separating texture sampling from 
+            lighting math, and adding a uniform toggle to switch between lighting models.
+        </p>
+
+        <h3>C++ Rendering Pipeline Enhancements</h3>
+        <ul>
+            <li><strong>ShaderProgram class:</strong> encapsulates shader compilation, linking, and uniform handling.</li>
+            <li><strong>RenderableObject class:</strong> manages VAOs, VBOs, and draw calls.</li>
+            <li><strong>Scene class:</strong> organizes lights, camera, and objects into a structured scene graph.</li>
+        </ul>
+
+        <h3>Pseudocode Summary</h3>
+        <pre>
+// Blinn-Phong specular calculation
+vec3 lightDir = normalize(light.position - fragPos);
+vec3 viewDir = normalize(viewPosition - fragPos);
+vec3 halfVector = normalize(lightDir + viewDir);
+
+float spec = pow(max(dot(normal, halfVector), 0.0), material.shininess);
+        </pre>
+
+        <p>
+            These enhancements significantly improved realism, modularity, and maintainability across the entire 
+            rendering pipeline.
         </p>
     </div>
+
+    <!-- COURSE OUTCOME ALIGNMENT -->
+    <div class="section">
+        <h2>Course Outcome Alignment</h2>
+        <p>This enhancement demonstrates:</p>
+        <ul>
+            <li><strong>Modular software engineering:</strong> through refactoring the rendering pipeline into clean, maintainable classes.</li>
+            <li><strong>Advanced shader programming:</strong> by implementing Blinn‑Phong lighting and improving GPU‑based rendering logic.</li>
+            <li><strong>Complex system design:</strong> through structured management of lights, materials, textures, and objects.</li>
+            <li><strong>Trade‑off evaluation:</strong> choosing Blinn‑Phong over Phong based on performance and realism.</li>
+            <li><strong>Security‑focused design:</strong> modular code reduces fragility and improves reliability.</li>
+        </ul>
+
+        <p>This enhancement aligns with the following Computer Science program outcomes:</p>
+        <ul>
+            <li><strong>Outcome 2:</strong> Professional‑quality communication</li>
+            <li><strong>Outcome 3:</strong> Algorithmic design and evaluation</li>
+            <li><strong>Outcome 4:</strong> Innovative computing techniques</li>
+            <li><strong>Outcome 5:</strong> Security‑focused design</li>
+        </ul>
+    </div>
+
+    <!-- ARTIFACT NARRATIVE -->
+    <div class="section">
+        <h2>Artifact Narrative</h2>
+
+        <h3>Description</h3>
+        <p>
+            This artifact is a custom 3D graphic rendering inspired by Indianapolis’s Monument Circle. While the 
+            real location is far more complex and detailed, this version is intentionally simplified to fit the 
+            project scope and allow for creative experimentation. Several artistic liberties were taken to explore 
+            different material behaviors, lighting effects, and scene composition. The original version was created 
+            in 2023, and the enhanced version was completed during this Capstone Project.
+        </p>
+
+        <h3>Justification for Inclusion</h3>
+        <p>
+            I selected this artifact because it offered a wide range of opportunities for meaningful enhancement. 
+            The original project had a solid foundation but was limited in its lighting capabilities and overall 
+            modularity. By revisiting it, I demonstrated skills in graphics programming, shader development, C++ 
+            architecture, debugging, and mathematical reasoning. The implementation of Blinn‑Phong lighting 
+            significantly improved the visual quality of the scene and showcased my ability to work across both 
+            C++ and GLSL to create a cohesive rendering pipeline.
+        </p>
+
+        <h3>Reflection</h3>
+        <p>
+            Enhancing this artifact taught me the importance of precision in graphics programming. Even a single 
+            missing uniform, such as the camera’s position, can break an entire lighting system and result in a 
+            black screen. I learned how critical it is for C++ structures and GLSL structs to match exactly, and 
+            how much debugging effort can go into resolving issues caused by small mismatches.
+        </p>
+        <p>
+            The process was challenging but rewarding. Refactoring the LightingManager revealed deeper issues in 
+            the camera system, requiring a complete overhaul. Each change uncovered new incompatibilities, but 
+            overcoming these obstacles strengthened my problem‑solving skills and increased my confidence in 
+            enhancing and refactoring existing codebases.
+        </p>
+    </div>
+
+    <!-- LINKS -->
+    <div class="section">
+        <h2>Artifact Files</h2>
+        <ul>
+            <li><a href="https://github.com/JenniferDarque/ePortfolio/tree/main/ArtifactOne/JenniferSwintonGraphicsArtifact1">Enhanced Artifact (GitHub)</a></li>
+            <li><a href="https://github.com/JenniferDarque/ePortfolio/tree/main/ArtifactOriginals/ArtifactOneOriginal/ArtifactOne">Original Artifact (GitHub)</a></li>
+        </ul>
+    </div>
+
 </body>
 </html>
