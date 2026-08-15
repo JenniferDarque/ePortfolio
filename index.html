@@ -2,22 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Capstone Project ePortfolio – Jennifer Darque</title>
+    <title>Jennifer Darque – Capstone Project ePortfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 40px;
             background: #f7f7f7;
             color: #333;
+            line-height: 1.6;
         }
-        h1 {
+        h1, h2, h3 {
             margin-bottom: 10px;
+        }
+        nav {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #0066cc;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
         }
         .section {
             background: #fff;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
-            margin-bottom: 25px;
+            margin-bottom: 35px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         ul {
@@ -38,45 +55,97 @@
 </head>
 
 <body>
-    <h1>Capstone Project ePortfolio</h1>
-    <p>
-        Welcome to my Capstone Project ePortfolio. This portfolio showcases my professional self‑assessment, 
-        code review, original artifacts, enhanced artifacts, and narratives demonstrating my mastery of the 
-        Computer Science program outcomes.
-    </p>
 
-    <div class="section">
+    <h1>Jennifer Darque – Capstone Project ePortfolio</h1>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#self-assessment">Self‑Assessment</a>
+        <a href="#code-review">Code Review</a>
+        <a href="#artifacts">Artifacts</a>
+    </nav>
+
+    <!-- Self-Assessment Section -->
+    <div id="self-assessment" class="section">
         <h2>Professional Self‑Assessment</h2>
+        <p>
+            Over the past five years in the Computer Science program, I have developed a strong foundation in 
+            software engineering, algorithmic reasoning, database design, and secure coding practices. 
+            Throughout this journey, I have learned how to architect modular systems, evaluate trade‑offs in 
+            algorithmic design, and build reliable, maintainable applications across multiple platforms.
+        </p>
+
+        <p>
+            Three of the most important skills I gained include:
+        </p>
         <ul>
-            <li><a href="SelfAssessment/index.html">Professional Self‑Assessment</a></li>
+            <li><strong>Software architecture and design:</strong> building modular, maintainable systems with clean separation of concerns.</li>
+            <li><strong>Algorithmic thinking:</strong> designing efficient solutions, analyzing performance trade‑offs, and applying data structures effectively.</li>
+            <li><strong>Database design and secure data management:</strong> creating schemas, implementing CRUD operations, and ensuring data integrity and privacy.</li>
         </ul>
-        <p>This section introduces my strengths, skills, and professional goals as a computer scientist.</p>
+
+        <p>
+            The enhancements in this Capstone Project demonstrate mastery across the core Computer Science program outcomes. 
+            I strengthened my software engineering skills through a complete lighting‑model upgrade in my 
+            graphics project. I demonstrated algorithmic reasoning by implementing a predictive trend analysis 
+            feature in my mobile application. I showcased database expertise by migrating a raw SQLite system 
+            to Room, a modern Android persistence library. I also emphasized secure design principles and 
+            professional communication through detailed narratives and a comprehensive code review.
+        </p>
+
+        <p>
+            These skills directly support my career goals in Scrum, Product Ownership, and Project Management. 
+            Understanding architecture, algorithms, and data management allows me to communicate effectively 
+            with development teams, evaluate technical decisions, and guide projects with confidence. Together, 
+            the artifacts in this portfolio highlight both my professional focus and personal passion for 
+            building reliable, user‑centered software systems.
+        </p>
     </div>
 
-    <div class="section">
+    <!-- Code Review Section -->
+    <div id="code-review" class="section">
         <h2>Code Review</h2>
         <ul>
-            <li><a href="https://youtu.be/jusZJ8IKJao">Code Review Video (YouTube)</a></li>
+            <li><a href="https://www.youtube.com/">Code Review Video (YouTube)</a></li>
         </ul>
-        <p>This video provides a detailed walkthrough and analysis of the original codebase.</p>
+        <p>
+            This video provides a detailed walkthrough of the original artifacts, explaining architectural 
+            decisions, identifying areas for improvement, and demonstrating professional‑quality technical 
+            communication.
+        </p>
     </div>
 
-    <div class="section">
+    <!-- Artifacts Section -->
+    <div id="artifacts" class="section">
         <h2>Enhanced Artifacts</h2>
-        <ul>
-            <li><a href="ArtifactOne/index.html">Graphics Rendering Project</a></li>
-            <li><a href="ArtifactTwo/index.html">Weight Tracking App – Predictive Trend Feature</a></li>
-            <li><a href="ArtifactThree/index.html">Weight Tracking App – Room Database Migration</a></li>
-        </ul>
-        <p>These artifacts represent the enhanced versions of my projects, demonstrating improvements aligned with Capstone outcomes.</p>
-    </div>
 
-    <div class="section">
+        <!-- SOFTWARE ENGINEERING & DESIGN SUMMARY -->
+        <h3>Software Engineering & Design</h3>
+        <p>
+            For the Software Engineering and Design category, I selected a 3D rendering project originally 
+            developed in C++ and OpenGL. This artifact showcases full control over the graphics pipeline through 
+            custom GLSL shaders, including a vertex shader responsible for matrix‑driven coordinate manipulation 
+            and a fragment shader that computes realistic surface textures and Phong lighting across directional, 
+            point, and spot light sources.  
+        </p>
+        <p>
+            I chose this artifact because it represents a technically challenging and personally meaningful part 
+            of my programming journey. Enhancing it allowed me to demonstrate modular software engineering, 
+            shader architecture improvements, and rendering pipeline refinement. The project’s complexity made 
+            it an ideal candidate for showcasing advanced engineering skills and thoughtful system design.
+        </p>
+        <ul>
+            <li><a href="SoftwareEngineering/index.html">Software Engineering & Design Artifact</a></li>
+        </ul>
+
+        <!-- ALGORITHMS & DATA STRUCTURES SUMMARY (TO BE INSERTED NEXT) -->
+
+        <!-- DATABASES SUMMARY (TO BE INSERTED NEXT) -->
+
         <h2>Original Artifacts</h2>
         <ul>
             <li><a href="ArtifactOriginals/index.html">Original Project Files</a></li>
         </ul>
-        <p>These are the original versions of each artifact prior to enhancement.</p>
     </div>
 
 </body>
