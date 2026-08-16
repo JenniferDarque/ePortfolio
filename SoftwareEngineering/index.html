@@ -7,11 +7,11 @@
         body {
             font-family: Arial, sans-serif;
             margin: 40px;
-            background: #f3efe6; /* Soft beige background */
+            background: #f3efe6;
             color: #333;
             line-height: 1.6;
         }
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             margin-bottom: 10px;
         }
         a {
@@ -35,6 +35,27 @@
         li {
             margin: 6px 0;
         }
+        img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+        .image-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .image-col {
+            flex: 1;
+            min-width: 280px;
+        }
+        pre {
+            background: #eee;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
     </style>
 </head>
 
@@ -43,21 +64,19 @@
     <h1>Software Engineering & Design Artifact</h1>
     <p><a href="../index.html">← Back to Homepage</a></p>
 
-    <!-- CATEGORY SUMMARY -->
+    <!-- CATEGORY OVERVIEW -->
     <div class="section">
         <h2>Category Overview</h2>
         <p>
             For the Software Engineering and Design category, I selected a 3D rendering project originally 
-            developed in C++ and OpenGL. This artifact showcases full control over the graphics pipeline through 
-            custom GLSL shaders, including a vertex shader responsible for matrix‑driven coordinate manipulation 
-            and a fragment shader that computes realistic surface textures and Phong lighting across directional, 
-            point, and spot light sources.
+            developed in C++ and OpenGL. This artifact demonstrates full control over the graphics pipeline 
+            through custom GLSL shaders, including a vertex shader responsible for matrix‑driven coordinate 
+            manipulation and a fragment shader that computes realistic surface textures and lighting.
         </p>
         <p>
-            I chose this artifact because it represents a technically challenging and personally meaningful part 
-            of my programming journey. Enhancing it allowed me to demonstrate modular software engineering, 
-            shader architecture improvements, and rendering pipeline refinement. The project’s complexity made 
-            it an ideal candidate for showcasing advanced engineering skills and thoughtful system design.
+            Enhancing this artifact allowed me to demonstrate modular software engineering, shader architecture 
+            improvements, and rendering pipeline refinement. The project’s complexity made it an ideal candidate 
+            for showcasing advanced engineering skills and thoughtful system design.
         </p>
     </div>
 
@@ -102,11 +121,28 @@ vec3 halfVector = normalize(lightDir + viewDir);
 
 float spec = pow(max(dot(normal, halfVector), 0.0), material.shininess);
         </pre>
+    </div>
 
+    <!-- BEFORE / AFTER IMAGES -->
+    <div class="section">
+        <h2>Visual Comparison</h2>
         <p>
-            These enhancements significantly improved realism, modularity, and maintainability across the entire 
-            rendering pipeline.
+            The following images illustrate the lighting and shading improvements made during the enhancement.
+            The original version used Phong lighting, while the enhanced version implements Blinn‑Phong with 
+            normalized normals, improved texture handling, and modular shader architecture.
         </p>
+
+        <div class="image-row">
+            <div class="image-col">
+                <h4>Before Enhancement (Phong Lighting)</h4>
+                <img src="images/before.png" alt="Original Phong Lighting">
+            </div>
+
+            <div class="image-col">
+                <h4>After Enhancement (Blinn‑Phong Lighting)</h4>
+                <img src="images/after.png" alt="Enhanced Blinn‑Phong Lighting">
+            </div>
+        </div>
     </div>
 
     <!-- COURSE OUTCOME ALIGNMENT -->
@@ -120,14 +156,6 @@ float spec = pow(max(dot(normal, halfVector), 0.0), material.shininess);
             <li><strong>Trade‑off evaluation:</strong> choosing Blinn‑Phong over Phong based on performance and realism.</li>
             <li><strong>Security‑focused design:</strong> modular code reduces fragility and improves reliability.</li>
         </ul>
-
-        <p>This enhancement aligns with the following Computer Science program outcomes:</p>
-        <ul>
-            <li><strong>Outcome 2:</strong> Professional‑quality communication</li>
-            <li><strong>Outcome 3:</strong> Algorithmic design and evaluation</li>
-            <li><strong>Outcome 4:</strong> Innovative computing techniques</li>
-            <li><strong>Outcome 5:</strong> Security‑focused design</li>
-        </ul>
     </div>
 
     <!-- ARTIFACT NARRATIVE -->
@@ -138,27 +166,23 @@ float spec = pow(max(dot(normal, halfVector), 0.0), material.shininess);
         <p>
             This artifact is a custom 3D graphic rendering inspired by Indianapolis’s Monument Circle. While the 
             real location is far more complex and detailed, this version is intentionally simplified to fit the 
-            project scope and allow for creative experimentation. Several artistic liberties were taken to explore 
-            different material behaviors, lighting effects, and scene composition. The original version was created 
-            in 2023, and the enhanced version was completed during this Capstone Project.
+            project scope and allow for creative experimentation. The original version was created in 2023, and 
+            the enhanced version was completed during this Capstone Project.
         </p>
 
         <h3>Justification for Inclusion</h3>
         <p>
             I selected this artifact because it offered a wide range of opportunities for meaningful enhancement. 
             The original project had a solid foundation but was limited in its lighting capabilities and overall 
-            modularity. By revisiting it, I demonstrated skills in graphics programming, shader development, C++ 
-            architecture, debugging, and mathematical reasoning. The implementation of Blinn‑Phong lighting 
-            significantly improved the visual quality of the scene and showcased my ability to work across both 
-            C++ and GLSL to create a cohesive rendering pipeline.
+            modularity. Enhancing it demonstrated skills in graphics programming, shader development, C++ 
+            architecture, debugging, and mathematical reasoning.
         </p>
 
         <h3>Reflection</h3>
         <p>
             Enhancing this artifact taught me the importance of precision in graphics programming. Even a single 
             missing uniform, such as the camera’s position, can break an entire lighting system and result in a 
-            black screen. I learned how critical it is for C++ structures and GLSL structs to match exactly, and 
-            how much debugging effort can go into resolving issues caused by small mismatches.
+            black screen. I learned how critical it is for C++ structures and GLSL structs to match exactly.
         </p>
         <p>
             The process was challenging but rewarding. Refactoring the LightingManager revealed deeper issues in 
@@ -172,8 +196,8 @@ float spec = pow(max(dot(normal, halfVector), 0.0), material.shininess);
     <div class="section">
         <h2>Artifact Files</h2>
         <ul>
-            <li><a href="https://github.com/JenniferDarque/ePortfolio/tree/main/ArtifactOne/JenniferSwintonGraphicsArtifact1">Enhanced Artifact (GitHub)</a></li>
-            <li><a href="https://github.com/JenniferDarque/ePortfolio/tree/main/ArtifactOriginals/ArtifactOneOriginal/ArtifactOne">Original Artifact (GitHub)</a></li>
+            <li><a href="https://github.com/JenniferDarque/ePortfolio/tree/main/SoftwareEngineering">Enhanced Artifact (GitHub)</a></li>
+            <li><a href="https://github.com/JenniferDarque/ePortfolio/tree/main/ArtifactOriginals">Original Artifact Files (GitHub)</a></li>
         </ul>
     </div>
 
