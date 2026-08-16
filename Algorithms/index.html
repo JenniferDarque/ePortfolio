@@ -2,23 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Weight Tracking App – Predictive Trend Feature</title>
+    <title>Algorithms & Data Structures – Capstone Artifact</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 40px;
-            background: #f7f7f7;
+            background: #f3efe6;
             color: #333;
+            line-height: 1.6;
         }
-        h1 {
+        h1, h2, h3, h4 {
             margin-bottom: 10px;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
         .section {
             background: #fff;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 35px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
         }
         ul {
             list-style: none;
@@ -27,53 +35,144 @@
         li {
             margin: 6px 0;
         }
-        a {
-            text-decoration: none;
-            color: #0066cc;
+        pre {
+            background: #eee;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
         }
-        a:hover {
-            text-decoration: underline;
+        img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+        .image-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .image-col {
+            flex: 1;
+            min-width: 280px;
         }
     </style>
 </head>
 
 <body>
-    <h1>Weight Tracking App – Predictive Trend Feature</h1>
 
-    <!-- Return to Home Page -->
-    <p><a href="../index.html">Return to Home Page</a></p>
+    <h1>Algorithms & Data Structures Artifact</h1>
+    <p><a href="../index.html">← Back to Homepage</a></p>
 
-    <p>
-        This page provides access to the components of the Weight Tracking App – Predictive Trend Feature, 
-        including the enhanced Android project files and documentation created for the Capstone Project.
-    </p>
-
+    <!-- CATEGORY OVERVIEW -->
     <div class="section">
-        <h2>Project Files</h2>
-        <ul>
-            <li><a href="https://github.com/JenniferDarque/ePortfolio/tree/main/ArtifactTwo/JenniferSwintonWeightTrackerArtifact2">
-                Android Project Source (Enhanced)
-            </a></li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Documentation</h2>
-        <ul>
-            <li><a href="Artifact Two Narrative.docx">Predictive Trend Feature Narrative (Capstone)</a></li>
-        </ul>
+        <h2>Category Overview</h2>
         <p>
-            This narrative explains the enhancements made to the Weight Tracking App, including the predictive trend 
-            algorithm, UI updates, and alignment with the Capstone Project outcomes.
+            For the Algorithms and Data Structures category, I selected my Weight Tracking App, originally built 
+            as a mobile application that allowed users to log daily weight entries. While functional, the initial 
+            version did not perform deeper analysis or provide meaningful predictions. Enhancing this artifact 
+            allowed me to transform it from a basic CRUD application into an intelligent system capable of 
+            analyzing patterns and forecasting future values.
+        </p>
+        <p>
+            This enhancement demonstrates algorithmic reasoning, responsible data processing, and thoughtful 
+            design choices. It also highlights my ability to integrate algorithms with UI components, database 
+            logic, and custom rendering code.
         </p>
     </div>
 
+    <!-- ENHANCEMENT PLAN -->
     <div class="section">
-        <h2>About This Directory</h2>
+        <h2>Enhancement Plan</h2>
         <p>
-            This directory contains the enhanced version of the Weight Tracking App – Predictive Trend Feature. 
-            Use this page to access the Android project files and narrative documentation.
+            The enhancement focused on implementing a predictive trend model using a multi‑step algorithm 
+            involving data windowing, smoothing, linear regression, and safeguard logic. This transformed the 
+            app from a simple data logger into a tool capable of forecasting future weight trends.
+        </p>
+
+        <h3>Algorithm Overview</h3>
+        <p>The enhancement included the following algorithmic components:</p>
+        <ul>
+            <li><strong>Data Windowing:</strong> grouping recent entries into rolling windows for trend analysis.</li>
+            <li><strong>Smoothing:</strong> reducing noise using moving averages.</li>
+            <li><strong>Linear Regression:</strong> calculating slope and intercept to predict future values.</li>
+            <li><strong>Safeguard Logic:</strong> preventing unrealistic predictions by enforcing bounds.</li>
+        </ul>
+
+        <h3>Pseudocode Summary</h3>
+        <pre>
+// Compute moving average
+for each window in data:
+    avg = sum(window) / window.size
+    smoothed.push(avg)
+
+// Linear regression prediction
+slope = computeSlope(smoothed)
+intercept = computeIntercept(smoothed)
+
+nextValue = slope * nextIndex + intercept
+        </pre>
+
+        <p>
+            These enhancements significantly improved the app’s usefulness by providing meaningful insights 
+            and future trend predictions.
         </p>
     </div>
+
+    <!-- OPTIONAL BEFORE/AFTER IMAGES -->
+    <!-- If you want images here later, just tell me and I’ll add them. -->
+
+    <!-- COURSE OUTCOME ALIGNMENT -->
+    <div class="section">
+        <h2>Course Outcome Alignment</h2>
+        <p>This enhancement demonstrates:</p>
+        <ul>
+            <li><strong>Algorithmic design:</strong> through multi‑step predictive modeling.</li>
+            <li><strong>Data structure utilization:</strong> using lists, windows, and regression inputs.</li>
+            <li><strong>Performance considerations:</strong> optimizing calculations for mobile devices.</li>
+            <li><strong>Responsible data handling:</strong> ensuring predictions remain realistic and safe.</li>
+            <li><strong>Integration with UI and database:</strong> connecting algorithmic output to user‑facing components.</li>
+        </ul>
+    </div>
+
+    <!-- ARTIFACT NARRATIVE -->
+    <div class="section">
+        <h2>Artifact Narrative</h2>
+
+        <h3>Description</h3>
+        <p>
+            The Weight Tracking App originally allowed users to enter daily weight values and view them in a 
+            simple list. While functional, it lacked deeper analysis and did not provide meaningful insights 
+            into long‑term trends.
+        </p>
+
+        <h3>Justification for Inclusion</h3>
+        <p>
+            I selected this artifact because it offered a clear opportunity to demonstrate algorithmic reasoning 
+            and data structure mastery. Enhancing it required designing a multi‑step predictive model and 
+            integrating it seamlessly into the app’s UI and database layer.
+        </p>
+
+        <h3>Reflection</h3>
+        <p>
+            Enhancing this artifact taught me how important it is to balance mathematical accuracy with 
+            real‑world usability. I learned how to refine algorithms to avoid unrealistic predictions and how to 
+            structure data processing pipelines that remain efficient on mobile devices.
+        </p>
+        <p>
+            This enhancement strengthened my confidence in designing algorithms, evaluating trade‑offs, and 
+            integrating computational logic into user‑centered applications.
+        </p>
+    </div>
+
+    <!-- LINKS -->
+    <div class="section">
+        <h2>Artifact Files</h2>
+        <ul>
+            <li><a href="https://github.com/JenniferDarque/ePortfolio/tree/main/Algorithms">Enhanced Artifact (GitHub)</a></li>
+            <li><a href="https://github.com/JenniferDarque/ePortfolio/tree/main/ArtifactOriginals">Original Artifact Files (GitHub)</a></li>
+        </ul>
+    </div>
+
 </body>
 </html>
