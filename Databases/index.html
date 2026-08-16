@@ -2,23 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Weight Tracking App – Room Database Migration</title>
+    <title>Databases – Capstone Artifact</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 40px;
-            background: #f7f7f7;
+            background: #f3efe6;
             color: #333;
+            line-height: 1.6;
         }
-        h1 {
+        h1, h2, h3, h4 {
             margin-bottom: 10px;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
         }
         .section {
             background: #fff;
-            padding: 20px;
+            padding: 25px;
             border-radius: 8px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 35px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
         }
         ul {
             list-style: none;
@@ -27,56 +35,124 @@
         li {
             margin: 6px 0;
         }
-        a {
-            text-decoration: none;
-            color: #0066cc;
-        }
-        a:hover {
-            text-decoration: underline;
+        pre {
+            background: #eee;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
         }
     </style>
 </head>
 
 <body>
-    <h1>Weight Tracking App – Room Database Migration</h1>
 
-    <!-- Return to Home Page -->
-    <p><a href="../index.html">Return to Home Page</a></p>
+    <h1>Databases Artifact</h1>
+    <p><a href="../index.html">← Back to Homepage</a></p>
 
-    <p>
-        This page provides access to the components of the Weight Tracking App – Room Database Migration, 
-        including the enhanced Android project files and documentation created for the Capstone Project.
-    </p>
-
+    <!-- CATEGORY OVERVIEW -->
     <div class="section">
-        <h2>Project Files</h2>
-        <ul>
-            <li>
-                <a href="https://github.com/JenniferDarque/ePortfolio/tree/main/ArtifactThree/JenniferSwintonWeightTrackerArtifact3">
-                    Android Project Source (Enhanced)
-                </a>
-            </li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Documentation</h2>
-        <ul>
-            <li><a href="Artifact 3 Narrative.docx">Room Database Migration Narrative (Capstone)</a></li>
-        </ul>
+        <h2>Category Overview</h2>
         <p>
-            This narrative explains the enhancements made to the Weight Tracking App, including the migration 
-            from SharedPreferences to Room Database, improved data persistence, and alignment with the Capstone 
-            Project outcomes.
+            For the Databases category, I selected the persistence layer of my Weight Tracking App. The original 
+            implementation relied on raw SQLite queries, which were functional but lacked structure, compile‑time 
+            validation, and modern best practices. Enhancing this artifact required migrating the entire data 
+            layer to Room, Android’s object‑relational mapping (ORM) framework.
+        </p>
+        <p>
+            This enhancement demonstrates my ability to redesign and modernize a database system using 
+            industry‑standard tools while improving reliability, maintainability, and security.
         </p>
     </div>
 
+    <!-- ENHANCEMENT PLAN -->
     <div class="section">
-        <h2>About This Directory</h2>
+        <h2>Enhancement Plan</h2>
         <p>
-            This directory contains the enhanced version of the Weight Tracking App – Room Database Migration. 
-            Use this page to access the Android project files and narrative documentation.
+            The enhancement focused on replacing raw SQLite queries with Room, a modern ORM that provides 
+            compile‑time query validation, entity modeling, and safer asynchronous operations. This required 
+            restructuring the entire persistence layer, updating UI components, and ensuring compatibility with 
+            Kotlin coroutines.
+        </p>
+
+        <h3>Key Improvements</h3>
+        <ul>
+            <li><strong>Entity Classes:</strong> created strongly‑typed models representing database tables.</li>
+            <li><strong>DAO Interfaces:</strong> replaced raw SQL with annotated query methods.</li>
+            <li><strong>Room Database:</strong> centralized database configuration and migration logic.</li>
+            <li><strong>Coroutines Integration:</strong> ensured safe background execution for all queries.</li>
+            <li><strong>UI Consistency:</strong> updated fragments and adapters to use new data sources.</li>
+        </ul>
+
+        <h3>Before (Raw SQLite)</h3>
+        <pre>
+// Raw SQL insert
+db.execSQL("INSERT INTO weights (value, date) VALUES (" + weight + ", '" + date + "')");
+        </pre>
+
+        <h3>After (Room ORM)</h3>
+        <pre>
+// DAO insert
+@Insert
+suspend fun insertWeight(entry: WeightEntry)
+        </pre>
+
+        <p>
+            These changes significantly improved reliability, reduced boilerplate code, and ensured safer 
+            database interactions across the entire application.
         </p>
     </div>
+
+    <!-- COURSE OUTCOME ALIGNMENT -->
+    <div class="section">
+        <h2>Course Outcome Alignment</h2>
+        <p>This enhancement demonstrates:</p>
+        <ul>
+            <li><strong>Database design:</strong> through structured entity modeling and schema definition.</li>
+            <li><strong>Secure data management:</strong> by eliminating unsafe raw SQL and adopting validated queries.</li>
+            <li><strong>Modern persistence techniques:</strong> using Room, DAOs, and coroutines.</li>
+            <li><strong>Architectural refinement:</strong> improving separation of concerns across UI, logic, and data layers.</li>
+            <li><strong>Performance optimization:</strong> ensuring queries run asynchronously without blocking the UI.</li>
+        </ul>
+    </div>
+
+    <!-- ARTIFACT NARRATIVE -->
+    <div class="section">
+        <h2>Artifact Narrative</h2>
+
+        <h3>Description</h3>
+        <p>
+            The original persistence layer relied on raw SQLite queries embedded directly in UI components. 
+            While functional, this approach made the code difficult to maintain, error‑prone, and vulnerable to 
+            SQL injection if not carefully sanitized.
+        </p>
+
+        <h3>Justification for Inclusion</h3>
+        <p>
+            I selected this artifact because it provided a clear opportunity to demonstrate database modernization 
+            and secure design principles. Migrating to Room required a deep understanding of schema design, 
+            asynchronous operations, and architectural best practices.
+        </p>
+
+        <h3>Reflection</h3>
+        <p>
+            Enhancing this artifact taught me how important it is to use modern persistence frameworks that 
+            enforce structure and safety. Room’s compile‑time validation prevented several subtle bugs that 
+            existed in the original implementation.
+        </p>
+        <p>
+            This enhancement strengthened my confidence in designing secure, maintainable database systems and 
+            integrating them into larger application architectures.
+        </p>
+    </div>
+
+    <!-- LINKS -->
+    <div class="section">
+        <h2>Artifact Files</h2>
+        <ul>
+            <li><a href="https://github.com/JenniferDarque/ePortfolio/tree/main/Databases">Enhanced Artifact (GitHub)</a></li>
+            <li><a href="https://github.com/JenniferDarque/ePortfolio/tree/main/ArtifactOriginals">Original Artifact Files (GitHub)</a></li>
+        </ul>
+    </div>
+
 </body>
 </html>
